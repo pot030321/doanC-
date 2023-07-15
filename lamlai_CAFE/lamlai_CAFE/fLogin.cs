@@ -63,5 +63,10 @@ namespace lamlai_CAFE
             }
 
         }
+
+        private void txbPassWord_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

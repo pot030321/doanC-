@@ -954,7 +954,7 @@
             this.tbAdmin.Controls.Add(this.tpFoodCategory);
             this.tbAdmin.Controls.Add(this.tpTable);
             this.tbAdmin.Controls.Add(this.tpAccount);
-            this.tbAdmin.Location = new System.Drawing.Point(27, 21);
+            this.tbAdmin.Location = new System.Drawing.Point(29, 21);
             this.tbAdmin.Name = "tbAdmin";
             this.tbAdmin.SelectedIndex = 0;
             this.tbAdmin.Size = new System.Drawing.Size(1134, 551);

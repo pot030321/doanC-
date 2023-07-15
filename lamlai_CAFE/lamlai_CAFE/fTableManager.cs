@@ -51,5 +51,13 @@ namespace lamlai_CAFE
             fAdmin f = new fAdmin();
             f.ShowDialog();
         }
+
+        private void khoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fStore fS = new fStore();
+            this.Hide();
+            fS.ShowDialog();
+            this.Show();
+        }
     }
 }
