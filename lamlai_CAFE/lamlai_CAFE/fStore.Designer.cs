@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnView = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dtpkTo = new System.Windows.Forms.DateTimePicker();
@@ -63,6 +64,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnView);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.dtpkTo);
@@ -76,9 +78,19 @@
             this.panel1.Size = new System.Drawing.Size(660, 114);
             this.panel1.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(572, 16);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 50);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Báo Cáo";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btnView
             // 
-            this.btnView.Location = new System.Drawing.Point(497, 61);
+            this.btnView.Location = new System.Drawing.Point(473, 16);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(75, 50);
             this.btnView.TabIndex = 12;
@@ -365,5 +377,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txbNgayNhap;
         private System.Windows.Forms.Button btnView;
+        private System.Windows.Forms.Button button1;
     }
 }

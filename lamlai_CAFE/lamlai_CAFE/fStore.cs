@@ -222,5 +222,14 @@ namespace lamlai_CAFE
                 BindGrid_dtgvStore(lS);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            fReportStore fR = new fReportStore();
+            this.Hide();
+            fR.ShowDialog();
+            this.Show();
+
+        }
     }
 }
