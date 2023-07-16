@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -170,6 +171,55 @@ namespace lamlai_CAFE
                 txbGiaNhap.Text = "";
                 txbDVT.Text = "";
                 txbSoLuong.Text = "";
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            StoreContextDB context = new StoreContextDB();
+            STORE s = new STORE()
+            {
+                MaterialID = txbMaNL.Text.ToString(),
+                NameMaterial = txbTenNL.Text.ToString(),
+                RecivedDate = DateTime.Parse(txbNgayNhap.Text),
+                SupplierPrice = int.Parse(txbGiaNhap.Text),
+                Unit = txbDVT.Text.ToString(),
+                Quantity = int.Parse(txbSoLuong.Text),
+            };
+            context.STOREs.Add(s);
+            context.SaveChanges();
+            List<STORE> lS = context.STOREs.ToList();
+            BindGrid_dtgvStore(lS);
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            StoreContextDB context = new StoreContextDB();
+            STORE dbUpdate = context.STOREs.FirstOrDefault(p => p.MaterialID.ToString() == txbMaNL.Text.ToString());
+            if (dbUpdate != null)
+            {
+                dbUpdate.NameMaterial = txbTenNL.Text.ToString();
+                dbUpdate.RecivedDate = DateTime.Parse(txbNgayNhap.Text);
+                dbUpdate.SupplierPrice = int.Parse(txbGiaNhap.Text);
+                dbUpdate.Unit = txbDVT.Text.ToString();
+                dbUpdate.Quantity = int.Parse(txbSoLuong.Text);
+
+                context.SaveChanges();
+                List<STORE> lS = context.STOREs.ToList();
+                BindGrid_dtgvStore(lS);
+            }
+        }
+
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            StoreContextDB context = new StoreContextDB();
+            STORE dbDelete = context.STOREs.FirstOrDefault(p => p.MaterialID.ToString() == txbMaNL.Text.ToString());
+            if (dbDelete != null)
+            {
+                context.STOREs.Remove(dbDelete);
+                context.SaveChanges();
+                List<STORE> lS = context.STOREs.ToList();
+                BindGrid_dtgvStore(lS);
             }
         }
     }
